@@ -1,0 +1,16 @@
+.background-radial-gradient {
+    background-color: #163172;
+    background-size: cover;
+}
+
+
+  .bg-glass {
+    background-color: hsla(0, 0%, 100%, 0.9) !important;
+    backdrop-filter: saturate(200%) blur(25px);
+  }
+  .display-5{
+    color: white ;
+  }
+  .opacity-70{
+    color: beige;
+  }
