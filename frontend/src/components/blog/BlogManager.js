@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { NavLink, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import app_config from "../../config";
 import Loading from "../main/Loading";
 import "./BlogManager.css";
@@ -59,10 +59,6 @@ const BlogManager = () => {
               className="bg-image hover-overlay ripple"
               data-mdb-ripple-color="light"
             >
-              {/* <img
-                src={url + "/" + file}
-                className="img-fluid"
-              /> */}
               <img
                 src="https://cdn.dribbble.com/users/1983106/screenshots/6241899/10_4x.jpg?compress=1&resize=400x300"
                 className="img-fluid "
@@ -112,8 +108,6 @@ const BlogManager = () => {
       </section>
       <section>
         <div className="container">
-          {/* <img className="img-fluid" src={File} alt="" /> */}
-
           <div className="row mt-3 mb-5">{displayBlog()}</div>
         </div>
       </section>

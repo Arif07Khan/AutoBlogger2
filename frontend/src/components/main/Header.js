@@ -1,10 +1,9 @@
-import { Switch } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import './Header.css';
-import { UserContext } from "./UseContext";
+import Profile from "./photo/profile.jpg";
 
-const Header = ({darkTheme, setDarkTheme}) => {
+const Header = () => {
 
   
   const navigate = useNavigate();
@@ -53,7 +52,7 @@ const Header = ({darkTheme, setDarkTheme}) => {
      <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <NavLink className="navbar-brand mt-2 mt-lg-0 logo" to="#">
         <img
-          src="https://www.freeiconspng.com/thumbs/blogger-logo-icon-png/blogger-logo-icon-png-10.png"
+          src={Profile}
           height="50"
           alt="MDB Logo"
           loading="lazy"

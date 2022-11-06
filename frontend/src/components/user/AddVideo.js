@@ -1,9 +1,8 @@
-import { Button, IconButton } from "@mui/material";
+import { Button} from "@mui/material";
 import TextareaAutosize from "@mui/material/TextareaAutosize";
 import { Formik } from "formik";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import { Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Loading from "../main/Loading";
 
@@ -90,14 +89,13 @@ const AddVideo = ({getDataFromBackend}) => {
   return (
     <div className="container-fluid">
           <div className="card mt-5 w-50 mx-auto">
-        <h1 className="text-center mt-2">Add Video</h1>
       <Formik initialValues={userForm} onSubmit={userSubmit} >
         {({ values, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
             {/* <!-- Name input --> */}
-            <div className="d-flex justify-content-center align-item-center mb-4 px-3">
-              <label className="mx-1" for="form4Example1">
-                Title
+            <div className="mb-4 px-3">
+              <label className="mx-1 form-label" htmlFor="form4Example1">
+                Title:-
               </label>
               <input
                 type="text"
@@ -109,9 +107,9 @@ const AddVideo = ({getDataFromBackend}) => {
             </div>
 
             {/* <!-- Message input --> */}
-            <div className="d-flex  mb-4 px-3">
-              <label className="mx-1" for="form4Example3">
-                Description
+            <div className="mb-4 px-3">
+              <label className="mx-1 form-label" for="form4Example3">
+                Description:-
               </label>
               <TextareaAutosize
                 aria-label="empty textarea"
@@ -125,7 +123,7 @@ const AddVideo = ({getDataFromBackend}) => {
             </div>
             <div className=" mb-4 d-flex justify-content-evenly align-item-center ">
               <Button variant="contained" component="label">
-                <i class="fas fa-upload    "></i> &nbsp;
+                <i className="fas fa-upload    "></i> &nbsp;
                 Upload Video
                 <input
                   hidden
@@ -136,6 +134,7 @@ const AddVideo = ({getDataFromBackend}) => {
                 />
               </Button>
               <Button variant="contained" component="label">
+                <i className="fas fa-upload"></i> &nbsp;
                 Upload Thumbnail
                 <input
                   hidden
