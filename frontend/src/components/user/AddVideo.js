@@ -73,7 +73,6 @@ const AddVideo = ({getDataFromBackend}) => {
         text: "Video added successfully😁👍",
         icon: "success",
       });
-      // window.location.reload();
       getDataFromBackend();
     } else {
       console.log("Something went wrong");
@@ -92,7 +91,6 @@ const AddVideo = ({getDataFromBackend}) => {
       <Formik initialValues={userForm} onSubmit={userSubmit} >
         {({ values, handleChange, handleSubmit }) => (
           <form onSubmit={handleSubmit}>
-            {/* <!-- Name input --> */}
             <div className="mb-4 px-3">
               <label className="mx-1 form-label" htmlFor="form4Example1">
                 Title:-
@@ -103,10 +101,9 @@ const AddVideo = ({getDataFromBackend}) => {
                 className="form-control"
                 onChange={handleChange}
                 value={values.title}
+                required
               />
             </div>
-
-            {/* <!-- Message input --> */}
             <div className="mb-4 px-3">
               <label className="mx-1 form-label" for="form4Example3">
                 Description:-
@@ -118,7 +115,7 @@ const AddVideo = ({getDataFromBackend}) => {
                 minRows={5}
                 onChange={handleChange}
                 value={values.description}
-                
+                required
               />
             </div>
             <div className=" mb-4 d-flex justify-content-evenly align-item-center ">
@@ -145,7 +142,6 @@ const AddVideo = ({getDataFromBackend}) => {
                 />
               </Button>
             </div>
-            {/* <!-- Submit button --> */}
             <div className="d-flex justify-content-center mb-4">
               {!loading ? (
                 <button type="submit" className="btn btn-danger w-75 mb-4 mt-3 rounded-5">

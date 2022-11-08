@@ -8,7 +8,6 @@ import Login from "./components/main/Login";
 import SignUp from "./components/main/SignUp";
 import ManageUser from "./components/admin/ManageUser";
 import AdminProfile from "./components/admin/AdminProfile";
-import Userprofile from "./components/user/Userprofile";
 import Blog from "./components/blog";
 import { useState } from "react";
 import { UserProvider } from "./components/main/UseContext";
@@ -58,7 +57,6 @@ function App() {
   );
   return (
     <div>
-    {/* <ThemeProvider theme={darkTheme ? theme1 : theme2}> */}
     <UserProvider user={currentUser}>
       <Toaster></Toaster>
       <BrowserRouter>
@@ -76,7 +74,6 @@ function App() {
            </Route>
 
           <Route element={<User />} path="user">
-            <Route element={<Authoriser><Userprofile /></Authoriser>} path="userprofile/:id" />
             <Route element={<Authoriser><VideoManager /></Authoriser>} path="videomanager/:id" />
             <Route element={<Authoriser><ViewVideos/></Authoriser>} path="viewvideo/:id"></Route>
             <Route element={<Authoriser><ManageProfile /></Authoriser>} path="manageprofile/:id" />

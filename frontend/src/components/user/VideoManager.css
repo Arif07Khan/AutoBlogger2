@@ -13,3 +13,12 @@
     padding: 5%;
     letter-spacing: 5px;
 }
+.bg-image{
+    height:20rem;
+    width: 20rem;
+}
+.bg-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

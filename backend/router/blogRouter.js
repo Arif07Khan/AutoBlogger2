@@ -43,21 +43,6 @@ router.get("/getbyuserid/:id", (req, res) => {
 })
 
 
-// router.get("/checkemail/:email", (req, res) => {
-//   // to fetch client data from get request
-//   console.log(req.params.email)
-
-//   Model.findOne({ email: req.params.email })
-//     .then((result) => {
-//       console.log(result)
-//       res.json(result)
-//     })
-//     .catch((err) => {
-//       console.error(err)
-//       res.json(err)
-//     })
-// })
-
 router.get("/getbyid/:id", (req, res) => {
   Model.findById(req.params.id)
     .then((result) => {

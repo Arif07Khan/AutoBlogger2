@@ -5,7 +5,7 @@ const myschema = new Schema({
     title:String,
     description:String,
     category:String,
-    data:String,
+    text:String,
     createdAt:Date,
     image:String,
     user: {

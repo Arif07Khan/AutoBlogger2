@@ -52,16 +52,16 @@ const BlogManager = () => {
       );
     } else {
       return blogList.map(
-        ({ _id, title, user:{name}, category, createdAt,createdBy }) => (
+        ({ _id, title, user:{name}, category,image, createdAt }) => (
           <div className="col-md-4 mt-4">
           <div className="card">
             <div
-              className="bg-image hover-overlay ripple"
+              className="bg-div hover-overlay ripple"
               data-mdb-ripple-color="light"
             >
               <img
-                src="https://cdn.dribbble.com/users/1983106/screenshots/6241899/10_4x.jpg?compress=1&resize=400x300"
-                className="img-fluid "
+                src={url + "/" + image}
+                className="img-fluid bg-image"
               />
               <a href="#!">
                 <div
@@ -69,7 +69,6 @@ const BlogManager = () => {
                   style={{backgroundColor: "rgba(251, 251, 251, 0.15)"}}></div>
               </a>
             </div>
-            {/* <img src= class="card-img-top" alt="" /> */}
             <div class="card-body">
               <div className="date float-end">
               &nbsp;{(createdAt)}
@@ -81,7 +80,7 @@ const BlogManager = () => {
               <br/>
               </div>
               <div className="d-flex justify-content-between">
-              <button className="btn btn-primary" onClick={e=>navigate('/blog/viewblog/'+id)} >View</button>
+              <button className="btn btn-primary" onClick={e=>navigate('/blog/viewblog/'+_id)} >View</button>
               <button className="btn btn-danger float-end" onClick={e=>{deleteBlog(_id)}}>
                 Delete
               </button>

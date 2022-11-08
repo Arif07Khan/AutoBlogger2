@@ -20,6 +20,7 @@ const AddBlog = () => {
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user"))
   );
+  const [selBlog, setSelBlog] = useState("");
   const navigate = useNavigate();
 
   const getDatafromBackend = async () => {
@@ -32,13 +33,28 @@ const AddBlog = () => {
       title: data.title,
       description: data.description,
       text:data.transcription.text,
+      category:"",
       createdAt:new Date(),
     })
     setLoading(false);
   }
 };
 
-
+const uploadBlog = (e) => {
+  const file = e.target.files[0];
+  setSelBlog(file.name);
+  const fd = new FormData();
+  fd.append("myfile", file);
+  fetch("http://localhost:5000/util/uploadfile", {
+    method: "POST",
+    body: fd,
+  }).then((res) => {
+    if (res.status === 200) {
+      toast.success("Image uploaded successfully");
+      console.log("uploaded");
+    }
+  });
+};
 
 useEffect(() => {
   getDatafromBackend()
@@ -48,6 +64,7 @@ useEffect(() => {
 const BlogSubmit = async (formdata) => {
   formdata.video = id;
   formdata.user = currentUser._id;
+  formdata.image=selBlog;
   const response = await fetch(url + "/blog/add", {
     method: "POST",
     body: JSON.stringify(formdata),
@@ -88,6 +105,7 @@ const BlogSubmit = async (formdata) => {
                 onChange={handleChange}
                 class="form-control"
                 name="title"
+                required
               />
             </div>
           </div>
@@ -104,6 +122,7 @@ const BlogSubmit = async (formdata) => {
                 onChange={handleChange}
                 className="form-control"
                 name="description"
+                required
               />
             </div>
           </div>
@@ -123,6 +142,7 @@ const BlogSubmit = async (formdata) => {
                 onChange={handleChange}
                 class="form-control"
                 name="category"
+                required
               />
             </div>
           </div>
@@ -136,12 +156,34 @@ const BlogSubmit = async (formdata) => {
                 Data
               </label>
               <SimpleMdeReact
+                type="text"
                 id="text"
                 value={values.text}
                 onChange={handleChange}
                 class="form-control "
+                required
                 name="text">
                 </SimpleMdeReact>
+            </div>
+          </div>
+          <div className="box">
+            <div class="mb-4">
+              <label
+                className="form-label"
+                htmlFor="image"
+                style={{ marginLeft: "0px" }}
+              >
+                Image
+              </label>
+              <input
+                type="file" 
+                id="image"
+                onChange={uploadBlog}
+                class="form-control"
+                accept="image/*"
+                required
+                name="image">
+                </input>
             </div>
           </div>
           <Button variant="contained" type="submit" className="sign w-100">

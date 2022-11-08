@@ -68,7 +68,6 @@ const VideoManager = () => {
   }
 
   const deleteVideo = async (id) => {
-    setDeleteLoading(true);
     console.log(id);
     const response = await fetch(url + "/video/deletebyid/" +id, {
       method: "Delete",
@@ -79,7 +78,6 @@ const VideoManager = () => {
     if (response.status === 200) {
       toast.success("Video Deleted Successfully");
       getDataFromBackend();
-      setDeleteLoading(false);
     }
 
   };
@@ -87,15 +85,15 @@ const VideoManager = () => {
   const displayVideo = () => {
     if (!loading) {
       return userArray.map(({ _id, title, description, file, thumbnail }) => (
-          <div className="col-md-4 mt-4">
+          <div className="col-md-4 mt-4" key={_id}>
           <div className="card">
             <div
-              className="bg-image hover-overlay ripple"
+              className="bg-div hover-overlay ripple"
               data-mdb-ripple-color="light"
             >
               <img
                 src={url + "/" + thumbnail}
-                className="img-fluid"
+                className="img-fluid bg-image"
               />
               <a href="#!">
                 <div
@@ -110,20 +108,15 @@ const VideoManager = () => {
                 <button className="btn btn-primary">View</button>
               </Link>
             &nbsp;&nbsp;&nbsp;
-            {!deleteLoading ? (
               <button className="btn btn-danger" onClick={(e)=>deleteVideo(_id)}>
               Delete
-            </button>):
-            (<button className="btn btn-danger" disabled>
-              Deleting...
-              </button>)}
-                          
+            </button>     
             &nbsp;&nbsp;&nbsp;
             {!blogLoading?(
-            <button className="btn btn-success" onClick={(e) => convertVideotoBlog(_id)}>
+            <button className="btn btn-success" onClick={(e)=>convertVideotoBlog(_id)}>
               Convert to Blog
             </button>):(
-            <button className="btn btn-success" disabled>
+            <button className="btn btn-success" disabled >
             Converting...
             </button>)
           }
