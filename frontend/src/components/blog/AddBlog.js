@@ -74,7 +74,7 @@ const BlogSubmit = async (formdata) => {
   });
   if(response.status === 200){
     toast.success("Blog Added Successfully");
-    navigate("/blog/blogmanager/"+currentUser._id);
+    navigate("/blog/listblog");
   }
 };
 

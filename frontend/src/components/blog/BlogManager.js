@@ -6,6 +6,7 @@ import app_config from "../../config";
 import Loading from "../main/Loading";
 import "./BlogManager.css";
 import { useNavigate } from "react-router-dom";
+import { format } from "date-fns";
 
 
 const BlogManager = () => {
@@ -14,6 +15,7 @@ const BlogManager = () => {
   const [loading, setLoading] = useState(true);
   const { id } = useParams();
   const navigate = useNavigate();
+
 
   const getDataFromBackend = async () => {
     setLoading(true);
@@ -61,7 +63,7 @@ const BlogManager = () => {
             >
               <img
                 src={url + "/" + image}
-                className="img-fluid bg-image"
+                className="img-fluid bg-image-blog"
               />
               <a href="#!">
                 <div
@@ -71,7 +73,7 @@ const BlogManager = () => {
             </div>
             <div class="card-body">
               <div className="date float-end">
-              &nbsp;{(createdAt)}
+              &nbsp;{format(new Date(createdAt), "dd MMM yyyy")}
               </div>
               <h4 className="title mt-3">{title}</h4>
               <div className=" text-muted mt-2">By &nbsp;

@@ -14,8 +14,8 @@
     letter-spacing: 5px;
 }
 .bg-image{
-    height:20rem;
-    width: 20rem;
+    height:15rem;
+    width: 100%;
 }
 .bg-div{
     display: flex;
