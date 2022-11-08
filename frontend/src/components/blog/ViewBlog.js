@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import app_config from '../../config';
-import { SimpleMDE } from "react-simplemde-editor";
 
 const ViewBlog = () => {
   const { id } = useParams();
@@ -35,7 +34,7 @@ const ViewBlog = () => {
           <p>{blogData.description}</p>
           </div>
           <div className="card-body">
-          <SimpleMDE>{blogData.text}</SimpleMDE>
+          <p>{blogData.text}</p>
           <p>{blogData.category}</p>
           </div>
         </div>

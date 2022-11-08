@@ -91,13 +91,12 @@ const SignUp = () => {
           <div className="col-lg-6 mb-5 mb-lg-0">
             <h1 className="my-5 display-5 fw-bold ls-tight">
               Welcome <br />
-              <span>to the SignUp Page</span>
+              <span>to the V2Blog.com</span>
             </h1>
             <p className="mb-4 opacity-70">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Temporibus, expedita iusto veniam atque, magni tempora mollitia
-              dolorum consequatur nulla, neque debitis eos reprehenderit quasi
-              ab ipsum nisi dolorem modi. Quos?
+              V2Blog is a platform where you can convert your video to
+              blog and share it with the world. You can also read other people's
+              blogs. You can also share your blogs with your friends and family.
             </p>
           </div>
 

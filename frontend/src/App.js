@@ -23,6 +23,8 @@ import Authoriser from "./components/main/Authoriser";
 import ManageProfile from "./components/user/ManageProfile";
 import  Dashboard  from "./components/admin/Dashboard";
 import ViewBlog from "./components/blog/ViewBlog";
+import Home from "./components/main/Home";
+import ListBlog from "./components/blog/ListBlog";
 
 
 function App() {
@@ -63,8 +65,9 @@ function App() {
         <Routes>
         <Route element={<Main />} path="/">
             <Route element={<Login />} path="login" />
-            <Route element={<SignUp />} path="/" />
+            <Route element={<SignUp />} path="signUp" />
             <Route element={<ContactUs />} path="contact" />
+            <Route element={<Home/>} path="/" />
           </Route>
 
           <Route element={<Admin/>} path="admin">   
@@ -83,13 +86,13 @@ function App() {
             <Route element={<Authoriser><AddBlog/></Authoriser>} path="addblog/:id"/>
             <Route element={<Authoriser><BlogManager/></Authoriser>} path="blogmanager/:id"/>
             <Route element={<Authoriser><ViewBlog/></Authoriser>} path="viewblog/:id"/>
+            <Route element={<ListBlog></ListBlog>} path="listblog"></Route>
           </Route>
           <Route element={<NotFound/>} path="*"/>
 
         </Routes>
       </BrowserRouter>
     </UserProvider>
-    {/* </ThemeProvider> */}
     </div>
   );
 }
