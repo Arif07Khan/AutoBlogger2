@@ -66,9 +66,7 @@ const ManageProfile = () => {
             <div className="card w-75 ">{selImage==""?
               <img src={"http://localhost:5000/" + profileData.avatar} className="card-img-top img-fluid" alt="..." />:
               <img src={profileData.avatar} className="card-img-top" alt="..." />}
-                <input type="file" className="form-control" onChange={uploadProfile}  accept={
-                  "image/png, image/jpeg, image/jpg"
-                }/>
+                <input type="file" className="form-control" onChange={uploadProfile}  accept="image/*"/>
             </div>
           </div>
           <div className="col-md-6">

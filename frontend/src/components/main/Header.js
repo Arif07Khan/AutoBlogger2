@@ -48,7 +48,6 @@ const Header = () => {
     >
       <i className="fas fa-bars"></i>
     </button>
-    {currentUser ? (
      <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <NavLink className="navbar-brand mt-2 mt-lg-0 logo" to="#">
         <img
@@ -61,13 +60,28 @@ const Header = () => {
       </NavLink>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item navbar-li">
+          <NavLink className="nav-link active" aria-current="page" to="/">
+            Home
+          </NavLink>
+        </li>
+        <li className="nav-item navbar-li">
+          <NavLink className="nav-link" to="/blog/listblog">
+            Blogs
+          </NavLink>
+        </li>
+        {currentUser?(
+          <>
+        <li className="nav-item navbar-li">
           <NavLink className="nav-link" to={"/user/videomanager/"+currentUser._id}>Video Manager</NavLink>
         </li>
         <li className="nav-item navbar-li">
           <NavLink className="nav-link" to={"/blog/blogmanager/"+currentUser._id}>Blog Manager</NavLink>
         </li>
+          </>
+        ):null
+        }
       </ul>
-    </div>) : null}
+    </div>
     <div className="d-flex align-items-center">
       {!currentUser ? (
       <div className="d-flex align-items-center">
