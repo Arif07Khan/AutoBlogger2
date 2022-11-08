@@ -88,7 +88,7 @@ const Header = () => {
         <NavLink type="button" className="btn btn-link px-3 me-2" to="/login">
           Login
         </NavLink>
-        <NavLink type="button" className="btn btn-primary me-3" to="/">
+        <NavLink type="button" className="btn btn-primary me-3" to="/signup">
           Sign up for free
         </NavLink>
       </div>):null}

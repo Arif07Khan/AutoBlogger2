@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react";
 import Loading from "../main/Loading";
 import { format } from "date-fns";
 import app_config from "../../config";
+import { useNavigate } from "react-router-dom";
+import "./listblog.css";
+
 
 
 
 const ListBlog = () => {
-
+  const navigate = useNavigate();
   const url = app_config.backend_url;
   const [blogdata, setBlogdata] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -34,18 +37,20 @@ const ListBlog = () => {
     return (
       <div className="container">
         <div className="row">
-          {blogdata.map(({ _id, title, image, createdAt }) => (
+          {blogdata.map(({ _id, title, image, createdAt,description }) => (
             <div className="col-md-4 mt-4">
               <div className="card">
-                <div classNmae="card-header">
-                  <img src={url+"/"+image} alt="blog" className="img-fluid" />
+                <div classNmae="card-header ">
+                  <img src={url+"/"+image} alt="blog" className="img-fluid" style={{height:"270px",padding:"0 55px"}}/>
                 </div>
                 <div className="card-body">
-                  <p className="card-text">
+                  <p className="card-text text-end">
                   {format(new Date(createdAt), "dd/MM/yyyy")}
                   </p>
                   <h5 className="card-title">{title}</h5>
+                  <p>{description}</p>
                 </div>
+                <button className="btn btn-primary" onClick={e=>navigate('/blog/viewblog/'+_id)}><i className="fa fa-eye" ></i>&nbsp; &nbsp; View</button>
               </div>
             </div>
           ))}
@@ -61,7 +66,12 @@ const ListBlog = () => {
   };
   };
 
-  return <div>{displayBlog()}</div>;
+  return <div classname="container-fluid">
+    <div className="list-bg-image mb-5">
+      <p>Blogs Container.</p>
+    </div>
+    {displayBlog()}
+    </div>
 };
 
 export default ListBlog;

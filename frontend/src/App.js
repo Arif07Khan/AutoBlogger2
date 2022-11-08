@@ -14,6 +14,7 @@ import { UserProvider } from "./components/main/UseContext";
 import VideoManager from "./components/user/VideoManager";
 import AddBlog from "./components/blog/AddBlog";
 import BlogManager from "./components/blog/BlogManager";
+import ManagerBlog from "./components/admin/ManagerBlog";
 import ContactUs from "./components/main/ContactUs";
 import NotFound from "./components/main/NotFound";
 import { createTheme } from "@mui/system";
@@ -73,7 +74,8 @@ function App() {
           <Route element={<Admin/>} path="admin">   
           <Route path="dashboard" element={<Dashboard/>} ></Route>        
           <Route path="manageuser" element={<ManageUser/>} ></Route>        
-          <Route path="adminprofile" element={<AdminProfile/>} ></Route>        
+          <Route path="adminprofile" element={<AdminProfile/>} ></Route>  
+          <Route path="blogmanager" element={<ManagerBlog/>} ></Route>      
            </Route>
 
           <Route element={<User />} path="user">

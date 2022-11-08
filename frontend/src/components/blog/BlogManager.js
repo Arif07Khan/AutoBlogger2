@@ -54,7 +54,7 @@ const BlogManager = () => {
       );
     } else {
       return blogList.map(
-        ({ _id, title, user:{name}, category,image, createdAt }) => (
+        ({ _id, title, user:{name},image, createdAt }) => (
           <div className="col-md-4 mt-4">
           <div className="card">
             <div
