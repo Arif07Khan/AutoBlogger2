@@ -1,8 +1,8 @@
 import { Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
 import Loading from "../main/Loading";
+import "./adminprofile.css";
 
 const AdminProfile = () => {
 
@@ -64,9 +64,9 @@ const AdminProfile = () => {
       return <Loading></Loading>;
     } else {
       return (
-        <div className="container">
-        <div className="row mt-5">
-          <h1 className="text-center">Manage Profile</h1>
+        <div className="container bg-adminprofile ">
+        <div className="row  bg-adminprofile-card">
+          <h1 className="text-center text-light">Manage Profile</h1>
           <div className="col-md-6 mt-2">
             <div className="card w-75 ">{selImage==""?
               <img src={"http://localhost:5000/" + profileData.avatar} className="card-img-top img-fluid" alt="..." />:
@@ -84,19 +84,19 @@ const AdminProfile = () => {
                 {({values, handleChange, handleSubmit}) => (
                     <form onSubmit={handleSubmit}>
                         <div className="form-group mb-2">
-                            <label htmlFor="name" className="form-label">Name</label>
+                            <label htmlFor="name" className="form-label text-light">Name</label>
                             <input type="text" className="form-control" name="name" value={values.name} onChange={handleChange} />
                         </div>
                         <div className="form-group mb-2">
-                            <label htmlFor="email" className="form-label">Email</label>
+                            <label htmlFor="email" className="form-label text-light">Email</label>
                             <input type="text" className="form-control" name="email" value={values.email} onChange={handleChange} disabled/>
                         </div>
                         <div className="form-group mb-2">
-                            <label htmlFor="username" className="form-label">Username</label>
+                            <label htmlFor="username" className="form-label text-light">Username</label>
                             <input type="text" className="form-control" name="username" id="username" value={values.username} onChange={handleChange} />
                         </div>
                         <div className="form-group mb-2">
-                            <label htmlFor="password" className="form-label">Password</label>
+                            <label htmlFor="password" className="form-label text-light">Password</label>
                             <input type="password" className="form-control" name="address" value={values.password} onChange={handleChange} disabled/>
                         </div>
                         <div className="mt-4">
@@ -116,7 +116,9 @@ const AdminProfile = () => {
     getDataFromBackend();
   }, []);
 
-  return <div>{displayProfile()}</div>;
+  return <div >
+    {displayProfile()}
+    </div>;
 };
 
 export default AdminProfile;

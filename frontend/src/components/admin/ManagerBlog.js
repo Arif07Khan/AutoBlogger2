@@ -40,32 +40,40 @@ const ManagerBlog = () => {
   const displayBlog = () => {
     if (!loading) {
     return (
-      <div className="container">
-        <div className="row">
-          {blogData.map(({ _id, title, image, createdAt,category,description }) => (
-            <div className="col-md-4 mt-4">
-              <div className="card">
-                <div classNmae="card-header ">
-                  <img src={url+"/"+image} alt="blog" className="img-fluid admin-bg-image" />
-                </div>
-                <div className="card-body">
-                  <h5 className="card-title">{title}</h5>
-                  <p className="card-text">{description}</p>
-                  <p className="card-text">{category}</p>
-                </div>
-                <button className="btn btn-primary" onClick={e=>{deleteBlog(_id)}}><i className="fa fa-thin fa-trash bg-red"></i> Delete</button>
-              </div>
-            </div>
+      <table className='table '>
+        <thead className='outline'>
+          <tr>
+            <th className='h5'>Blog Title</th>
+            <th className='h5'>Blog Content</th>
+            <th className='h5'>Blog Date</th>
+            <th className='h5'>Blog Image</th>
+            <th className='h5'>Blog Category</th>
+            <th className='h5'>Blog Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          {blogData.map((blog) => (
+            <tr key={blog._id}>
+              <td className='font-weight-bold'>{blog.title}</td>
+              <td>{blog.description}</td>
+              <td>{blog.createdAt}</td>
+              <td>{blog.image}</td>
+              <td>{blog.category}</td>
+              <td>
+                <button className='btn btn-danger' onClick={() => deleteBlog(blog._id)}><i className="fa fa-trash" aria-hidden="true"></i>  Delete</button>
+              </td>
+            </tr>
           ))}
-        </div>
-      </div>
+        </tbody>
+      </table>
+
     );
     }
   }
 
   return (
-    <div className='container-fluid'>
-      <h1 className="text-center">Manage Blog</h1>
+    <div className='container-fluid bg-admin-blogs '>
+      <h1 className="text-center mb-3">Manage Blog</h1>
     {displayBlog()}
     </div>
   )

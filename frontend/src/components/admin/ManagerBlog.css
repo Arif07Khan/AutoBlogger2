@@ -3,3 +3,13 @@
     height: 200px;
     width: 100%;
 }
+.bg-admin-blogs{
+    background: linear-gradient(to right, #a3f7e8, #bbc6f7);
+    height: 100%;
+    width: 100%;
+}
+.bg-admin-user{
+    background: linear-gradient(to right, #c4ebf0ca, #bbc6f7b0);
+    height: 100%;
+    width: 100%;
+}

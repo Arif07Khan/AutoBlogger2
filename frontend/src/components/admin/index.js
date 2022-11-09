@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import { AccountCircle } from "@mui/icons-material";
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import BookIcon from '@mui/icons-material/Book';
+import LogoutIcon from '@mui/icons-material/Logout';
+import toast from "react-hot-toast";
 
 
 const Admin = () => {
@@ -28,6 +30,11 @@ const Admin = () => {
       name: "ManageBlog",
       icon: <BookIcon/>,
       link: "/admin/blogmanager",
+    },
+    {
+      name: "Logout",
+      icon: <LogoutIcon/>,
+      link: "/",
     },
 
   ];

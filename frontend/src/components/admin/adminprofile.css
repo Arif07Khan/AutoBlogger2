@@ -1,24 +1,20 @@
 
-.bg-manageprofile{
+.bg-adminprofile{
     border-radius: 5px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.bg-manageprofile-card{
+.bg-adminprofile-card{
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
     height: 70vh;
-    margin-top: 30px;
     margin-left: 130px;
     width: max-content;
-}
-.bg-profilepage{
-    background: linear-gradient(to right, #bbd2c5, #536976, #292e49);
-    animation: gradient 15s ease infinite;
-    height: 100vh;
+    border-radius: 15px;
+    padding: 0 20px;
 }
 
 @keyframes gradient {

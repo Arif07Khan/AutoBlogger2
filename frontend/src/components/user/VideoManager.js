@@ -145,7 +145,7 @@ const VideoManager = () => {
       <section>
           <AddVideo getDataFromBackend={getDataFromBackend}/>
         <div>
-          <h3 className="text-center mt-4">Latest videos</h3>
+          <h3 className="text-center mt-4">All Videos</h3>
         </div>
       </section>
       <section>

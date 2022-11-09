@@ -36,20 +36,19 @@ const Home = () => {
                   >
                     <div className="card-body px-4 py-5 px-md-5">
                       <div className="typewriter">
-                      <Typewriter
-                      
-                      options={{autoStart: true, loop: true}}
-                        onInit={(typewriter) => {
-                          typewriter
-                            .typeString("Welcome to the V2Blog.com")
-                            .callFunction(() => {
-                              console.log("String typed out!");
-                            })
-                            .pauseFor(2500)
-                            .deleteAll()
-                            .start();
-                        }}
-                      />
+                        <Typewriter
+                          options={{ autoStart: true, loop: true }}
+                          onInit={(typewriter) => {
+                            typewriter
+                              .typeString("Welcome to the V2Blog.com")
+                              .callFunction(() => {
+                                console.log("String typed out!");
+                              })
+                              .pauseFor(2500)
+                              .deleteAll()
+                              .start();
+                          }}
+                        />
                       </div>
                       <NavLink
                         className="btn  btn-primary btn-lg py-3 px-5 mb-2 mb-md-0 me-md-2"
@@ -218,7 +217,9 @@ const Home = () => {
                       {" "}
                       <i className="fas fa-quote-left pe-2"></i>
                       <span>
-                       V2Blog is a good and simple platform to convert your video into blogs and also you can manage your blogs and also you can see other people blogs.
+                        V2Blog is a good and simple platform to convert your
+                        video into blogs and also you can manage your blogs and
+                        also you can see other people blogs.
                       </span>{" "}
                     </p>
                     <ul className="list-unstyled d-flex justify-content-center mb-0">
@@ -262,7 +263,8 @@ const Home = () => {
                       {" "}
                       <i className="fas fa-quote-left pe-2"></i>
                       <span>
-                      V2Blog me to convert the video into blog very simply and easily, it is not a complex process.
+                        V2Blog me to convert the video into blog very simply and
+                        easily, it is not a complex process.
                       </span>{" "}
                     </p>
                     <ul className="list-unstyled d-flex justify-content-center mb-0">
@@ -306,7 +308,9 @@ const Home = () => {
                       {" "}
                       <i className="fas fa-quote-left pe-2"></i>
                       <span>
-                       I am a content creator and i have problem in writing blogs, this platform helps me in doing the work simply and easily.
+                        I am a content creator and i have problem in writing
+                        blogs, this platform helps me in doing the work simply
+                        and easily.
                       </span>{" "}
                     </p>
                     <ul className="list-unstyled d-flex justify-content-center mb-0">
@@ -335,6 +339,76 @@ const Home = () => {
                 </div>
               </section>
             </section>
+          </div>
+          <div data-draggable="true" style={{ position: "relative" }}>
+            <footer
+              className="text-center text-white"
+              style={{ backgroundColor: "#f1f1f1" }}
+            >
+              <div className="container pt-4">
+                <section className="mb-4">
+                  <a
+                    className="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="https://www.facebook.com/profile.php?id=100087793143882"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+                    target="_blank"
+                  >
+                    <i className="fab fa-facebook-f" />
+                  </a>
+                  <a
+                    className="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+                  >
+                    <i className="fab fa-twitter" />
+                  </a>
+                  <a
+                    className="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+                  >
+                    <i className="fab fa-google" />
+                  </a>
+
+                  <a
+                    className="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+                  >
+                    <i className="fab fa-instagram" />
+                  </a>
+                  <a
+                    className="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+                  >
+                    <i className="fab fa-linkedin" />
+                  </a>
+                  <a
+                    className="btn btn-link btn-floating btn-lg text-dark m-1"
+                    href="#!"
+                    role="button"
+                    data-mdb-ripple-color="dark"
+                  >
+                    <i className="fab fa-github" />
+                  </a>
+                </section>
+              </div>
+              <div
+                className="text-center text-dark p-3"
+                style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+              >
+                © 2020 Copyright:
+                <a className="text-dark" href="https://mdbootstrap.com/">
+                  V2Blogs.com
+                </a>
+              </div>
+            </footer>
           </div>
         </div>
       </div>

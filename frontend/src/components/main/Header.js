@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import './Header.css';
 import Profile from "./photo/profile.jpg";
@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <div>
-<nav className="navbar navbar-expand-lg navbar-light bg-light">
+<nav className="navbar navbar-expand-lg navbar-light bg-navbar-color">
   <div className="container-fluid">
     <button
       className="navbar-toggler"
@@ -60,22 +60,22 @@ const Header = () => {
       </NavLink>
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item navbar-li">
-          <NavLink className="nav-link active" aria-current="page" to="/">
+          <NavLink className="nav-link active text-white" aria-current="page" to="/">
             Home
           </NavLink>
         </li>
         <li className="nav-item navbar-li">
-          <NavLink className="nav-link" to="/blog/listblog">
+          <NavLink className="nav-link text-white" to="/blog/listblog">
             Blogs
           </NavLink>
         </li>
         {currentUser?(
           <>
         <li className="nav-item navbar-li">
-          <NavLink className="nav-link" to={"/user/videomanager/"+currentUser._id}>Video Manager</NavLink>
+          <NavLink className="nav-link text-white" to={"/user/videomanager/"+currentUser._id}>Video Manager</NavLink>
         </li>
         <li className="nav-item navbar-li">
-          <NavLink className="nav-link" to={"/blog/blogmanager/"+currentUser._id}>Blog Manager</NavLink>
+          <NavLink className="nav-link text-white" to={"/blog/blogmanager/"+currentUser._id}>Blog Manager</NavLink>
         </li>
           </>
         ):null
@@ -85,7 +85,7 @@ const Header = () => {
     <div className="d-flex align-items-center">
       {!currentUser ? (
       <div className="d-flex align-items-center">
-        <NavLink type="button" className="btn btn-link px-3 me-2" to="/login">
+        <NavLink type="button" className="btn btn-light px-3 me-2" to="/login">
           Login
         </NavLink>
         <NavLink type="button" className="btn btn-primary me-3" to="/signup">
@@ -135,7 +135,6 @@ const Header = () => {
     </div>
   </div>
 </nav>
-
     </div>
   );
 };

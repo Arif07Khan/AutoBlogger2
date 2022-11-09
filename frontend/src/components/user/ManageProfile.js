@@ -57,28 +57,22 @@ const ManageProfile = () => {
 
   const displayProfile = () => {
     if (loading) {
-      return <Loading></Loading>;
+      return <div className="d-flex justify-content-center mt-5">
+        <Loading></Loading>;
+      </div> 
     } else {
       return (
-        <div className="container bg-manageprofile ">
+        <div className="container bg-manageprofile p-0 m-0 ">
           <div className="card px-5 bg-manageprofile-card">
             <div className="row">
-              <h1 className="text-center">Manage Profile</h1>
+              <h1 className="text-center text-white">Manage Profile</h1>
               <div className="col-md-6 mt-2">
                 <div className="card w-75 ">
-                  {selImage == "" ? (
                     <img
                       src={"http://localhost:5000/" + profileData.avatar}
                       className="card-img-top img-fluid"
                       alt="..."
                     />
-                  ) : (
-                    <img
-                      src={profileData.avatar}
-                      className="card-img-top"
-                      alt="..."
-                    />
-                  )}
                   <input
                     type="file"
                     className="form-control"
@@ -92,7 +86,7 @@ const ManageProfile = () => {
                   {({ values, handleChange, handleSubmit }) => (
                     <form onSubmit={handleSubmit}>
                       <div className="form-group mb-2">
-                        <label htmlFor="name" className="form-label">
+                        <label htmlFor="name" className="form-label text-white">
                           Name
                         </label>
                         <input
@@ -104,7 +98,7 @@ const ManageProfile = () => {
                         />
                       </div>
                       <div className="form-group mb-2">
-                        <label htmlFor="email" className="form-label">
+                        <label htmlFor="email" className="form-label text-white">
                           Email
                         </label>
                         <input
@@ -117,7 +111,7 @@ const ManageProfile = () => {
                         />
                       </div>
                       <div className="form-group mb-2">
-                        <label htmlFor="username" className="form-label">
+                        <label htmlFor="username" className="form-label text-white">
                           Username
                         </label>
                         <input
@@ -130,7 +124,7 @@ const ManageProfile = () => {
                         />
                       </div>
                       <div className="form-group mb-2">
-                        <label htmlFor="password" className="form-label">
+                        <label htmlFor="password" className="form-label text-white">
                           Password
                         </label>
                         <input
@@ -165,7 +159,7 @@ const ManageProfile = () => {
     getDataFromBackend();
   }, []);
 
-  return <div className="bg-dark vh-100">
+  return <div className="bg-profilepage">
     <div className="">
     {displayProfile()}
     </div>

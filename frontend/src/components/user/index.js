@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 const User = () => {
   return (
     <div>
-      <Header />
+      <Header  />
       <Toaster/>
       <Outlet/>
     </div>

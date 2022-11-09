@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Loading from '../main/Loading';
+import "./ManagerBlog.css"
 
 const ManageUser = () => {
 
@@ -35,7 +36,7 @@ const ManageUser = () => {
  const displaydata = () => {
 
     return <div>
-    <h1 className="text-center">Manage User</h1>
+    <h1 className="text-center mb-4">Manage User</h1>
     <table className="table table-striped">
     <thead>
       <tr>
@@ -54,7 +55,7 @@ const ManageUser = () => {
           <td>{user.email}</td>
           <td><img src={user.avatar} alt="avatar" style={{width:"50px",height:"50px"}}/></td>
           <td>
-            <button className="btn btn-danger" onClick={e=>deleteUser(user._id)}>Delete</button>
+            <button className="btn btn-danger" onClick={e=>deleteUser(user._id)}> <i class="fa fa-trash" aria-hidden="true"></i> &nbsp; Delete</button>
           </td>
         </tr>
       ))}
@@ -65,7 +66,7 @@ const ManageUser = () => {
   }
  
   return (
-    <div>
+    <div className='bg-admin-user'>
       {usersData ? displaydata() : <div className='text-center mt-5'><Loading/></div>}
     </div>
   )
